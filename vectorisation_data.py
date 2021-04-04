@@ -78,12 +78,12 @@ def vectorisation_1(df,ind):
     for j in df.iloc[:,1:] :
         list_occ.append((df[j].sum()))
     
-    val_max = np.max(list_occ)
+    val_max = np.quantile(list_occ, 0.9)
     val_min = np.min(list_occ)
     
     #List of indexes of max and min values
     index_val_min = [indice for indice, valeur in enumerate(list_occ) if valeur==val_min]
-    index_val_max = [indice for indice, valeur in enumerate(list_occ) if valeur==val_max]
+    index_val_max = [indice for indice, valeur in enumerate(list_occ) if valeur>=val_max]
     
     #List of indexes of columns to delete
     list_del = sorted(index_val_max + index_val_min)
