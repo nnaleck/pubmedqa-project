@@ -1,10 +1,10 @@
 article_files/
 default/
 pdfs/
+similar_pdfs/
 venv/
 .idea
 .DS_Store
-fulltext_dataset_pdf.csv
 fulltext_dataset_ncbi.csv
 oa_comm_use_file_list.csv
 oa_file_list.csv
